@@ -322,6 +322,15 @@
 				jQuery("#jqxgrid").jqxGrid('updatebounddata');
 				return;
 			}
+
+
+
+
+
+
+
+
+
 		</script>
 
 

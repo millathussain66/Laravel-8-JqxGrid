@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home.index');
+        return view('home.grid');
     }
 
     public function grid(Request $request)
@@ -33,9 +33,7 @@ class HomeController extends Controller
 
         return response()->json($data);
     }
-
     // getGridData
-
     public function getGridData($filterscount, $sortdatafield, $sortorder, $limit, $offset)
     {
         $where2 = ['b.sts', '!=', '0'];
@@ -133,6 +131,19 @@ class HomeController extends Controller
             'Rows' => $query->get(),
         ];
     }
+
+    // For Add
+
+    public function from(){
+
+
+         return view('home.form');
+
+
+    }
+
+
+
 
 
 

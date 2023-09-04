@@ -22,3 +22,6 @@ Route::get('/', function () {
 // For Final Grid System
 Route::get('home',[HomeController::class,'index'])->name('home');
 Route::any('home/grid',[HomeController::class,'grid'])->name('grid');
+
+
+Route::any('home/grid/from/',[HomeController::class,'from'])->name('from');
