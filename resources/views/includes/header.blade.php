@@ -82,6 +82,11 @@
 
     <!---- Left Side Menu Start ------>
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
         .active {
             background: #93CDDD !important;
             font-weight: bold;
@@ -211,7 +216,7 @@
             });
         </script>
 
-        <div id='jqxWidget' style='margin-top: 50px; width: 100%;'>
+        <div id='jqxWidget' style='margin-top: 50px;'>
             <div id='jqxMenu' style="visibility: hidden;">
                 <ul>
                     <li style="width: 80px;"><a href="#">About Us</a>
@@ -287,7 +292,7 @@
                             <div class="navigationItem">
                                 <ul class="navigationContent">
 
-                                    <li class="navigationItemContent" id="active"><a href="">Lawyer Bill</a>
+                                    <li class="navigationItemContent" id="active"><a href="">Add Main Data</a>
                                     </li>
 
 

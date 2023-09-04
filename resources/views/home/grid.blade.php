@@ -1,8 +1,6 @@
 @extends('./../includes.header')
 @section('content')
 
-
-
 <div id="container">
 	<div id="body">
 		<script type="text/javascript">
@@ -12,8 +10,7 @@
 				var theme = 'classic';
 				var source = {
 					datatype: "json",
-					datafields: [
-						{
+					datafields: [{
 							name: 'id',
 							type: 'int'
 						},
@@ -122,7 +119,7 @@
 					},
 					root: 'Rows',
 					beforeprocessing: function(data) {
-		
+
 					}
 
 				};
@@ -170,8 +167,7 @@
 						return obj.data;
 					},
 
-					columns: [
-                        {
+					columns: [{
 							text: 'Id',
 							datafield: 'id',
 							hidden: true,
@@ -188,19 +184,19 @@
 							datafield: 'e_by',
 							hidden: true
 						},
-                        {
-								text: 'D',
-								menu: false,
-								datafield: 'Edit',
-								align: 'center',
-								editable: false,
-								sortable: false,
-								width: '2%',
-								cellsrenderer: function(row) {
-									editrow = row;
-									var dataRecord = jQuery("#jqxgrid").jqxGrid('getrowdata', editrow);
+						{
+							text: 'D',
+							menu: false,
+							datafield: 'Edit',
+							align: 'center',
+							editable: false,
+							sortable: false,
+							width: '2%',
+							cellsrenderer: function(row) {
+								editrow = row;
+								var dataRecord = jQuery("#jqxgrid").jqxGrid('getrowdata', editrow);
 
-								}
+							}
 						},
 
 
@@ -305,6 +301,27 @@
 					]
 				});
 
+				var initWidgets = function(tab) {
+					switch (tab) {
+						case 0:
+							break;
+						case 1:
+							initGrid2();
+							break;
+					}
+				}
+				jQuery('#jqxTabs').jqxTabs({
+					width: '100%',
+					initTabContent: initWidgets
+				});
+				jQuery('#jqxTabs').bind('selected', function(event) {});
+
+
+
+
+
+
+
 				jQuery("#details").jqxWindow({
 					theme: theme,
 					maxWidth: '100%',
@@ -316,25 +333,35 @@
 					autoOpen: false,
 					cancelButton: jQuery("#codeOK")
 				});
+
+
 			});
 
 			function search_data() {
 				jQuery("#jqxgrid").jqxGrid('updatebounddata');
 				return;
 			}
-
-
-
-
-
-
-
-
-
 		</script>
 
+		<div id='jqxTabs'>
+			<ul>
+				<li style="margin-left: 30px;">Entry Form</li>
+				<li>Data Grid</li>
+			</ul>
+			<!---==== First Tab Start ==========----->
+			<div style="overflow: hidden;">
 
-		<div id="jqxgrid" style="margin: 10px auto;"></div>
+			sdfghjkl;
+			</div>
+			<div style="overflow: hidden;">
+			<div id="jqxgrid" style="margin: 10px auto;"></div>
+
+			</div>
+		</div>
+
+
+
+
 
 
 		<!-- Modal for product details -->
@@ -373,5 +400,4 @@
 
 
 
-@endsection
-
+		@endsection
